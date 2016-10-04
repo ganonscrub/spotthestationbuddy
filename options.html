@@ -1,0 +1,52 @@
+<html>
+
+<head>
+	<title>Spot the Station Buddy Options</title>
+	
+	<style>
+	body{
+		border-left:1px solid black;
+		border-right:1px solid black;
+		font-family:Consolas;
+		margin:auto;
+		max-width:800px;
+		text-align:center;
+	}
+	#calendarIDLabel{
+		text-decoration:underline;
+	}
+	#setCalendarIDButton{
+		display:none;
+	}
+	#calendarList{
+		margin:auto;
+		width:fit-content;
+		text-align:left;
+	}
+	#deleteCalendarButton{
+		margin-top:16px;
+	}
+	</style>
+	
+	<script src="jquery.js"></script>
+	<script src="options.js"></script>
+</head>
+
+<body>
+	<div>
+		<h2 id="calendarIDLabel">Current Calendar Setting</h2>
+	</div>
+	<div>
+		<h3 id="calendarID">&nbsp;</h3>
+	</div>
+	<div id="changeCalendar">
+		<input type="button" id="changeCalendarIDButton" value="Change Calendar Setting"></input>
+		<input type="button" id="setCalendarIDButton" value="Getting Calendars..."></input>
+		<div id="calendarList"></div>
+	</div>
+	<div id="deleteCalendar">
+		<input type="button" id="deleteCalendarButton" value="Delete Current Calendar"></input>
+	</div>
+</body>
+
+</html>

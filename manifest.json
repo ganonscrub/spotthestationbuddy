@@ -1,0 +1,50 @@
+{
+	"manifest_version": 2,
+
+	"name": "Spot the Station Buddy",
+	"short_name": "STSBuddy",
+	"description": "Adds buttons to Spot the Station webpages to export times directly to Google Calendar",
+	"version": "0.1",
+  
+	"content_scripts": [ {
+		"matches": [
+			"*://spotthestation.nasa.gov/sightings/*"
+			],
+		"js": ["jquery.js","contentscript.js"]
+		}
+	],
+	
+	"oauth2": {
+		"client_id": "255016522692-5521n63rc4qbs3ov0ffgkq1jah07pj8h.apps.googleusercontent.com",
+		"scopes": [
+			"https://www.googleapis.com/auth/calendar"
+		]
+	},
+
+	"background" : {
+		"scripts" : [ 
+			"jquery.js",
+			"background.js"
+		]
+	},
+	
+	"web_accessible_resources" : [ 
+		"images/upload_before.png",
+		"images/upload_during.gif",
+		"images/upload_after.png"
+	],
+	
+	"options_page" : "options.html",
+	
+	"browser_action": {
+		"default_icon": "images/icon.png",
+		"default_title": "Spot the Station Buddy"
+	},
+	
+	"permissions": [
+		"storage",
+		"identity"
+	],
+	
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAknqPFqefScvqF1WKzVUGQPjv6ZiSiElqDuQbvFZkUOD8vKw/Wp4Sk85LXWyRm7HU0Ta09RHmd7xKfrITKLKHPdSufDzL/a08ZPMEvFiS//7wEng9mieZpcIAE7CA34rLQVPlOzRehWN5FluUf0ymuaxzdlO9Oxrq/LmENd6IQaSBElJqANGTJ4Hp+AZNRJ49DKCGnyYiZdcMdepmRDFF4X++1Vh4+ZIR04xZMu58DU2kfA69n62lPx5krttJZYY7Q8pkmdPQe2ATAJFkGl1Jq3+HupNuJ4nE56WxlRLTSKRRly8izoQd+++TXi1SVmfuyulp09N1bj0+ZPvuZubidwIDAQAB"
+}
